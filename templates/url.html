@@ -1,0 +1,18 @@
+{% from 'macros.html' import form_field %}
+
+{% block content %}
+<center><h1>The CookAI Monster says ... <br> I want more url playlists !!!!</h1></center>
+<center> <img src="../../static/Arts/CookAI_monster_yellow_shadow.png"></center>
+<h2><center>Please insert valid url playlist...</center></h2>
+
+<form method="post">
+    <center>
+    {{ form.csrf_token }}
+    {{ form_field(form.url) }}
+    <br>
+    {{ form_field(form.playlist_type) }}  
+    <br>
+    {{ form.validate }}
+    </center>    
+</form>
+{% endblock %}

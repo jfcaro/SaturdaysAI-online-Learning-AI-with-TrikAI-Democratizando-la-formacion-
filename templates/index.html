@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    
+{% from 'macros.html' import form_field %}
+{% block content %}
+
+<head>
+<title>{% block title %}TrickAI{% endblock %}</title>       
+
+        {% block styles %}
+<!--            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='templates/style.css' ) }}"> -->
+        {% endblock styles %}    
+</head>
+<center><h1>Wellcome to Learning with TrikAI <br> The CookAI Monster !!!</h1></center>
+<center> <img src="../static/Arts/CookAI_monster.png"></center>
+<center> <h2>Please introduce your subject to learn</h2></center>
+<center><form method="post">
+    {{ form.csrf_token }}
+    {{ form_field(form.consult) }}
+    <br>
+    {{ form_field(form.level) }} 
+    <br>
+    <br>
+    <br>
+    {{ form.validate }}
+    
+</form></center>
+{% endblock %}
+
+<footer>
+{% block footer %}
+<br>
+<br>    
+<center><small> <a href="{{ url_for('library') }}"><img src="../static/Arts/library-mini.png"></a> <a href="{{ url_for('dAIogenes') }}"><img src="../static/Arts/links-mini.png"></a> <a href="{{ url_for('admin') }}"><img src="../static/Arts/admin-mini.png"></a> </center>
+<br>
+<center><a href="https://www.twitter.com/jfrcaro">@jfrcaro</a></center> 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G595E9CJDL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G595E9CJDL');
+</script>
+            
+</small>
+{% endblock %}
+</footer>
+</html>
