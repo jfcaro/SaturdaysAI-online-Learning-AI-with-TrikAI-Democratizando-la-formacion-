@@ -1,8 +1,0 @@
-{
-  "labels":[
-    "BASIC",
-    "ADVANCED"
-  ],
-  "threshold":0.5,
-  "positive_label":null
-}
